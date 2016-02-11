@@ -17,6 +17,7 @@ namespace homesecurityService.Controllers
     {
         public ApiServices Services { get; set; }
         public IServiceTokenHandler handler { get; set; }
+        ResponseMessage rm = new ResponseMessage();
 
         // POST api/CustomLogin
         public HttpResponseMessage Post(LoginRequest loginRequest)
@@ -38,7 +39,8 @@ namespace homesecurityService.Controllers
                     var customLoginResult = new CustomLoginResult()
                     {
                         UserId = loginResult.User.UserId,
-                        MobileServiceAuthenticationToken = loginResult.AuthenticationToken
+                        MobileServiceAuthenticationToken = loginResult.AuthenticationToken,
+                        Verified = account.Verified
                     };
                     return this.Request.CreateResponse(HttpStatusCode.OK, customLoginResult);
                 }

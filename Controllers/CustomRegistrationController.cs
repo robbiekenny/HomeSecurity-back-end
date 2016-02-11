@@ -20,6 +20,7 @@ namespace homesecurityService.Controllers
     public class CustomRegistrationController : ApiController
     {
         public ApiServices ApiServices { get; set; }
+        ResponseMessage rm = new ResponseMessage();
 
         // POST api/CustomRegistration
         public HttpResponseMessage Post(RegistrationRequest registrationRequest)
@@ -48,32 +49,18 @@ namespace homesecurityService.Controllers
                     };
                     context.Accounts.Add(newAccount);
                     context.SaveChanges();
-                    message = "Created";
-                    //send email to this email address so that a user may verify it
-                    //api key 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
-
-                    // Create the email object first, then add the properties.
-                    //SendGridMessage myMessage = new SendGridMessage();
-                    //myMessage.AddTo(registrationRequest.email);
-                    //myMessage.From = new MailAddress("HomeSecurity@security.ie", "Home Security");
-                    //myMessage.Subject = "Testing the SendGrid Library";
-                    //myMessage.Text = "Hello World!";
-
-                    //var apiKey = "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";
-                    //// Create a Web transport, using API Key
-                    //var transportWeb = new Web(apiKey);
-
-                    //// Send the email.
-                    //transportWeb.DeliverAsync(myMessage);
+                    rm.message = "Created";
+                    rm.verified = false;
                     try
                     {
+                        //send email to this email address so that a user may verify it
                         VerifyAccountEmail(registrationRequest.email);
                     }catch(Exception e)
                     {
                         ApiServices.Log.Error("ERROR SENDING EMAIL");
                     }
                    
-                    return this.Request.CreateResponse(HttpStatusCode.Created, new { message });
+                    return this.Request.CreateResponse(HttpStatusCode.Created, rm);
                 }
             }
             message = "Failed";

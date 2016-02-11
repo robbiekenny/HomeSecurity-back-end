@@ -86,12 +86,11 @@ namespace homesecurityService.Controllers
 
             registration.RegistrationId = id;
             //var username = HttpContext.Current.User.Identity.Name;
-            //RemoveSpecial characters method returns a string that is suitable for notification hubs tags
-            string username = UserIDUtils.RemoveSpecialCharacters(userid);
+            
             // add check if user is allowed to add these tags
-            ApiServices.Log.Info("username = " + username + "\t Time: " + DateTime.Now);
+            ApiServices.Log.Info("username = " + userid + "\t Time: " + DateTime.Now);
             registration.Tags = new HashSet<string>(deviceUpdate.Tags);
-            registration.Tags.Add("username:" + username);
+            registration.Tags.Add("username:" + userid);
 
             try
             {

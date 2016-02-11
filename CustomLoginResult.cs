@@ -9,6 +9,6 @@ namespace homesecurityService
     {
         public string UserId { get; set; }
         public string MobileServiceAuthenticationToken { get; set; }
-
+        public bool Verified { get; set; } //added so that i can check if a users account is verified
     }
 }
