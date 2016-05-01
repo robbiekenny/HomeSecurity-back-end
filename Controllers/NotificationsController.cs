@@ -9,6 +9,12 @@ using System.Threading.Tasks;
 using System.Web;
 using Microsoft.WindowsAzure.Mobile.Service;
 
+/*
+THIS CONTROLLER SIMPLY PROVIDES THE FUNCTIONALITY OF SENDING MESSAGES TO A SPECIFIC TAG
+HOWEVER THIS METHOD OF SENDING COMMANDS BETWEEN DEVICES WAS VERY SLOW AND UNRELIABLE ON ACCOUNT 
+OF THIS METHOD IS USED MORE SO FOR SENDING NOTIFICATIONS
+*/
+
 namespace AppBackend.Controllers
 {
     public class NotificationsController : ApiController

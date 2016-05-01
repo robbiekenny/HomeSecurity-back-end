@@ -11,6 +11,13 @@ using System.Web;
 using System.Collections.Generic;
 using Microsoft.WindowsAzure.Mobile.Service;
 
+/*
+THIS CONTROLLER IS NO LONGER USED AS THIS FUNCTIONALITY IS NOW PROVIDED BY PUBNUB
+
+THIS CONTROLLER IS RESPONSIBLE FOR REGISTERING ANDROID CLIENTS FIRSTLY TO GCM BY REQUESTING AN ID
+AND THEN REGISTERING A USER TO A SPECIFIC TAG GROUP IN ORDER TO KEEP TRACK OF A USERS GROUP OF DEVICES
+*/
+
 namespace homesecurityService.Controllers
 {
     public class GCMRegistrationController : ApiController

@@ -14,6 +14,14 @@ using RestSharp;
 using RestSharp.Authenticators;
 //using SendGrid;
 
+/*REGISTER A USER BY SAVING THEIR EMAIL ADDRESS AND PASSWORD PROVIDED THE EMAIL DOESNT ALREADY EXIST
+A USERS PASSWORD IS SAVED BY GENERATING A SALT AND HASHING THE PASSWORD USING THAT SALT
+THE SALT IS SAVED ALONG WITH THE HASHED PASSWORD
+
+UPON SUCCESSFUL REGISTRATION A USER WILL BE SENT AN EMAIL ASKING THEM TO VERIFY THEIR ACCOUNT 
+SO THAT THEY CAN USE THE HOMESECURITY APPLICATION
+*/
+
 namespace homesecurityService.Controllers
 {
     [AuthorizeLevel(AuthorizationLevel.Anonymous)]
@@ -32,7 +40,7 @@ namespace homesecurityService.Controllers
                 Account account = context.Accounts.Where(a => a.Email == registrationRequest.email).SingleOrDefault();
                 if (account != null)
                 {
-                    //account alread exists
+                    //account already exists
                     return this.Request.CreateResponse(HttpStatusCode.BadRequest, new { message });
                 }
                 else
@@ -69,7 +77,10 @@ namespace homesecurityService.Controllers
 
         public static IRestResponse VerifyAccountEmail(string email)
         {
-            string homeSecurtityWebsite = "homesecurityapp.azurewebsites.net/VerifyAccount/Index?email=" + email;
+            //encode the streaming url so that its not visible in the url
+            var encodedUrl = System.Text.Encoding.UTF8.GetBytes(email);
+
+            string homeSecurtityWebsite = "homesecurityapp.azurewebsites.net/VerifyAccount/Index?email=" + System.Convert.ToBase64String(encodedUrl);
             RestClient client = new RestClient();
             client.BaseUrl = new Uri("https://api.mailgun.net/v3");
             client.Authenticator =

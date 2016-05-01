@@ -10,6 +10,11 @@ using homesecurityService.DataObjects;
 using homesecurityService.Models;
 using Microsoft.WindowsAzure.Mobile.Service;
 
+/*CONTROLLER USED TO CHECK A USERS EMAIL ANFD PASSWORD AGAINST THE DATABASE
+INCOMING PASSWORD IS HASHED USING THE SALT ASSOCIATED WITH THE EMAIL ADDRESS TO COMPARE THE PASSWORDS 
+AS PASWORDS ARE NOT STORED AS PLAINTEXT
+*/
+
 namespace homesecurityService.Controllers
 {
     [AuthorizeLevel(AuthorizationLevel.Anonymous)]

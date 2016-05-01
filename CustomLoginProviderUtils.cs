@@ -1,5 +1,10 @@
 ﻿using System.Security.Cryptography;
 
+/*
+THIS CLASS PROVIDES THE FUNCTIONALITY OF GENERATING A SALT,HASHING PASSWORDS WITH THE SALT AND 
+COMPARING HASHED PASSWORDS AGAINST ONE ANOTHER
+*/
+
 namespace homesecurityService
 {
     public class CustomLoginProviderUtils

@@ -136,3 +136,16 @@ C:\Users\Robbie\Documents\GitHub\homesecurityService\obj\Release\homesecuritySer
 C:\Users\Robbie\Documents\GitHub\homesecurityService\obj\Release\homesecurityService.pdb
 C:\Users\Robbie\Documents\GitHub\homesecurityService\bin\RestSharp.dll
 C:\Users\Robbie\Documents\GitHub\homesecurityService\bin\RestSharp.xml
+C:\Users\Robbie\Documents\GitHub\homesecurityService\bin\ApplicationInsights.config
+C:\Users\Robbie\Documents\GitHub\homesecurityService\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\Robbie\Documents\GitHub\homesecurityService\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\Robbie\Documents\GitHub\homesecurityService\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\Robbie\Documents\GitHub\homesecurityService\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\Robbie\Documents\GitHub\homesecurityService\bin\Microsoft.AI.Web.dll
+C:\Users\Robbie\Documents\GitHub\homesecurityService\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\Robbie\Documents\GitHub\homesecurityService\bin\Microsoft.ApplicationInsights.dll
+C:\Users\Robbie\Documents\GitHub\homesecurityService\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\Robbie\Documents\GitHub\homesecurityService\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\Robbie\Documents\GitHub\homesecurityService\bin\Microsoft.AI.Web.xml
+C:\Users\Robbie\Documents\GitHub\homesecurityService\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\Robbie\Documents\GitHub\homesecurityService\bin\Microsoft.ApplicationInsights.xml
